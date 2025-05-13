@@ -43,8 +43,43 @@ public class JobRepo {
 
     public void addJob(JobPost job) {
         jobs.add(job);
-        System.out.println(jobs);
+        System.out.println(job);
 
+    }
+
+    public JobPost getJob(int postId) {
+        for(JobPost job : jobs)
+        {
+                if(job.getPostId() == postId)
+                {
+                    return job;
+                }
+
+        }
+        return null;
+    }
+
+    public void updateJob(JobPost jobpost) {
+        for(JobPost job1 : jobs)
+        {
+                if(job1.getPostId() == jobpost.getPostId())
+                {
+                        job1.setPostProfile(jobpost.getPostProfile());
+                        job1.setPostDesc(jobpost.getPostDesc());
+                        job1.setReqExperience(jobpost.getReqExperience());
+                        job1.setPostTechStack(jobpost.getPostTechStack());
+                }
+        }
+    }
+
+    public void deleteJob(int postID) {
+        for(JobPost job2 : jobs)
+        {
+                if(job2.getPostId() == postID)
+                {
+                        jobs.remove(job2);
+                }
+        }
     }
 
 

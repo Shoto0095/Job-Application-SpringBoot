@@ -14,7 +14,7 @@ public class JobService {
     private  JobRepo repo;
 
 
-    // method to add a jobPost
+
     public void addJob(JobPost jobPost) {
         repo.addJob(jobPost);
 
@@ -26,6 +26,18 @@ public class JobService {
         return repo.getAllJobs();
 
 
+    }
+
+    public JobPost getJob(int postId) {
+        return repo.getJob(postId);
+    }
+
+    public void updatejob(JobPost jobpost) {
+         repo.updateJob(jobpost);
+    }
+
+    public void delete(int postID) {
+        repo.deleteJob(postID);
     }
 
 
